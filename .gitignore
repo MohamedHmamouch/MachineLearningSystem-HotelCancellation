@@ -165,5 +165,4 @@ artifact/*
 hotel_cancellation_env/*
 *.pyd
 *.dll
-logs/*
 hotel_cancellation.egg-info/*
