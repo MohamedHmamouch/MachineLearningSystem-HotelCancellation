@@ -11,7 +11,7 @@ This project aims to design an end-to-end machine learning (ML) system for predi
 
 The project is divided into several components:
 
-![Architecture Diagram](CodeArchitecture/machine_learning_system.png)
+<img src="CodeArchitecture/machine_learning_system.png" alt="Architecture Diagram" width="1200" height="300">
 
 ### 1. Data Ingestion
 - Data will be ingested directly from MongoDB Atlas.
