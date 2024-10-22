@@ -1,0 +1,24 @@
+models:
+  RandomForest:
+    model: RandomForestClassifier
+    params:
+      n_estimators:
+        min: 100
+        max: 1000
+        step: 100
+      max_depth:
+        min: 20
+        max: 100
+        step: 10
+
+  GradientBoosting:
+    model: GradientBoostingClassifier
+    params:
+      n_estimators:
+        min: 100
+        max: 1000
+        step: 100
+      max_depth:
+        min: 1
+        max: 20
+        step: 1
