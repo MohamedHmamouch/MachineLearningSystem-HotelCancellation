@@ -1,2 +1,1 @@
-*.ipynb linguist-language=Jupyter Notebook
-*.ipynb linguist-vendored
+*.ipynb linguist-language=Python
