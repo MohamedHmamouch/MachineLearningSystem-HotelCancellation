@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hotel Cancellation Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light static-top">
+        <div class="container-fluid">
+           <!-- Optional logo or branding can be added here -->
+        </div>
+     </nav>
+    <section>
+        <div class="container-fluid">
+            <div class="container">
+                <form action="/" method="post">
+                    <legend>Hotel Cancellation Prediction Form</legend>
+
+                    <div class="mb-3">
+                        <label for="meal">Meal Type</label>
+                        <select class="form-control" id="meal" name="meal" required>
+                            <option value="" disabled selected>Select Meal Type</option>
+                            <option>BB</option>
+                            <option>FB</option>
+                            <option>HB</option>
+                            <option>SC</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="country">Country</label>
+                        <input type="text" class="form-control" id="country" name="country" placeholder="Country" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="market_segment">Market Segment</label>
+                        <select class="form-control" id="market_segment" name="market_segment" required>
+                            <option value="" disabled selected>Select Market Segment</option>
+                            <option>Direct</option>
+                            <option>Corporate</option>
+                            <option>Online TA</option>
+                            <option>Offline TA/TO</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="distribution_channel">Distribution Channel</label>
+                        <select class="form-control" id="distribution_channel" name="distribution_channel" required>
+                            <option value="" disabled selected>Select Distribution Channel</option>
+                            <option>Direct</option>
+                            <option>Corporate</option>
+                            <option>TA/TO</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="reserved_room_type">Reserved Room Type</label>
+                        <input type="text" class="form-control" id="reserved_room_type" name="reserved_room_type" placeholder="Room Type (e.g., A, B, C)" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="lead_time">Lead Time</label>
+                        <input type="number" class="form-control" id="lead_time" name="lead_time" placeholder="Lead Time in Days" min="0" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="stays_in_weekend_nights">Weekend Nights Stay</label>
+                        <input type="number" class="form-control" id="stays_in_weekend_nights" name="stays_in_weekend_nights" min="0" placeholder="Number of Weekend Nights" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="stays_in_week_nights">Week Nights Stay</label>
+                        <input type="number" class="form-control" id="stays_in_week_nights" name="stays_in_week_nights" min="0" placeholder="Number of Week Nights" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="adults">Adults</label>
+                        <input type="number" class="form-control" id="adults" name="adults" min="1" placeholder="Number of Adults" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="children">Children</label>
+                        <input type="number" class="form-control" id="children" name="children" min="0" placeholder="Number of Children">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="is_repeated_guest">Is Repeated Guest?</label>
+                        <select class="form-control" id="is_repeated_guest" name="is_repeated_guest" required>
+                            <option value="" disabled selected>Select Yes or No</option>
+                            <option>1</option>
+                            <option>0</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="previous_cancellations">Previous Cancellations</label>
+                        <input type="number" class="form-control" id="previous_cancellations" name="previous_cancellations" min="0" placeholder="Previous Cancellations" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="previous_bookings_not_canceled">Previous Bookings Not Canceled</label>
+                        <input type="number" class="form-control" id="previous_bookings_not_canceled" name="previous_bookings_not_canceled" min="0" placeholder="Previous Bookings Not Canceled" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="days_in_waiting_list">Days in Waiting List</label>
+                        <input type="number" class="form-control" id="days_in_waiting_list" name="days_in_waiting_list" min="0" placeholder="Days in Waiting List" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="adr">Average Daily Rate</label>
+                        <input type="number" class="form-control" id="adr" name="adr" min="0" step="0.01" placeholder="Average Daily Rate" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="total_of_special_requests">Total Special Requests</label>
+                        <input type="number" class="form-control" id="total_of_special_requests" name="total_of_special_requests" min="0" placeholder="Total Special Requests" required>
+                    </div>
+
+                    <input class="btn btn-primary" type="submit" value="Predict Cancellation" required />
+                </form>
+            </div>
+            <div class="text-center text-black">
+                <h2 class="display-4 fw-bolder">Cancellation Prediction Status: {{context}} </h2>
+            </div>
+        </div>
+    </section>
+  </body>
+</html>
